@@ -1,0 +1,98 @@
+{
+  animations: [
+    {
+      clips: [
+        {
+          name: 'Take 001',
+          runtime_name: 'embedded_resources',
+        },
+      ],
+      path: 'Sampledata/embedded_resources.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'Porg_mat',
+      parameters: [
+        {
+          baseColor: [
+            0.5,
+            0.5,
+            0.5,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'porg_diffuse',
+        },
+        {
+          normalMap: 'porg_normal',
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 0.33000000000000002,
+        },
+        {
+          roughnessMap: 'porg_roughness',
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'Sampledata/embedded_resources.fbx',
+    name: 'embedded_resources',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'Sampledata/embedded_resources.fbm/porg_roughness.png',
+      name: 'porg_roughness',
+      params: {
+        usage_type: 'Data',
+      },
+      pipeline_name: 'embedded_resources.fbm/porg_roughness.png',
+    },
+    {
+      file: 'Sampledata/embedded_resources.fbm/porg_occlusion.png',
+      name: 'porg_occlusion',
+      params: {
+        usage_type: 'Data',
+      },
+      pipeline_name: 'embedded_resources.fbm/porg_occlusion.png',
+    },
+    {
+      file: 'Sampledata/embedded_resources.fbm/porg_diffuse.png',
+      name: 'porg_diffuse',
+      pipeline_name: 'embedded_resources.fbm/porg_diffuse.png',
+    },
+    {
+      file: 'Sampledata/embedded_resources.fbm/porg_normal.png',
+      name: 'porg_normal',
+      params: {
+        usage_type: 'Normal',
+      },
+      pipeline_name: 'embedded_resources.fbm/porg_normal.png',
+    },
+  ],
+  version: '0.54:2',
+}

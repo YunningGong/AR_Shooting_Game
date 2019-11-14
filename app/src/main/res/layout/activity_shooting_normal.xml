@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShootingActivity_normal"
+    android:clickable="false"
+    android:id="@+id/shootingLayout">
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/arFragment"
+        android:name="com.test.shooting.CustomArFragment"
+        android:clickable="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:layout_alignParentEnd="true"
+        android:text="Monsters Left: 20"
+        android:id="@+id/balloonsCntTxt"
+        android:textSize="22sp"
+        android:clickable="false"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+
+        android:layout_alignParentLeft="true"
+        android:text="Mode: Normal"
+        android:id="@+id/mode"
+        android:textSize="22sp"
+        android:clickable="false"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_centerHorizontal="true"
+        android:text="0:0"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        android:fontFamily="serif-monospace"
+        android:id="@+id/timerText"
+        android:clickable="false"/>
+
+    <View
+        android:layout_width="72dp"
+        android:layout_height="4dp"
+        android:background="#7a000000"
+        android:layout_centerInParent="true"
+        android:clickable="false"/>
+    <View
+        android:layout_width="4dp"
+        android:layout_height="72dp"
+        android:background="#7a000000"
+        android:layout_centerInParent="true"
+        android:clickable="false"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/shootButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:text=""
+        android:background="@android:color/transparent"/>
+
+
+    <ImageView
+        android:id="@+id/gun"
+        android:layout_width="580dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-87dp"
+        android:layout_marginEnd="-81dp"
+        android:layout_marginRight="-81dp"
+        android:layout_marginBottom="-91dp"
+        app:srcCompat="@drawable/sight4" />
+
+    <Button
+        android:id="@+id/giveUp"
+        android:layout_width="107dp"
+        android:layout_height="63dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="153dp"
+        android:layout_marginEnd="151dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Give Up" />
+
+
+</RelativeLayout>

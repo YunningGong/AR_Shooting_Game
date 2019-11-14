@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.test.shooting.StartGameActivity">
+
+
+    <Button
+        android:id="@+id/normal"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:background="#FFC107"
+        android:gravity="center"
+        android:text="Normal"
+        android:textSize="26dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/easy" />
+
+
+    <ImageView
+        android:id="@+id/monster"
+        android:layout_width="161dp"
+        android:layout_height="154dp"
+        app:layout_constraintBottom_toTopOf="@+id/normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sight"
+        app:layout_constraintVertical_bias="0.245"
+        app:srcCompat="@drawable/monster" />
+
+    <ImageView
+        android:id="@+id/sight"
+        android:layout_width="252dp"
+        android:layout_height="218dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shooting_title"
+        app:srcCompat="@drawable/sight2" />
+
+    <Button
+        android:id="@+id/easy"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="52dp"
+        android:background="#8BC34A"
+        android:fontFamily="sans-serif-medium"
+        android:text="Easy"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sight" />
+
+    <Button
+        android:id="@+id/hard"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:background="#E91E63"
+        android:fontFamily="sans-serif-medium"
+        android:text="Hard"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/normal"
+        app:layout_constraintVertical_bias="0.011" />
+
+    <ImageView
+        android:id="@+id/shooting_title"
+        android:layout_width="293dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/shooting2" />
+
+    <ImageView
+        android:id="@+id/logout_image"
+        android:layout_width="49dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hard"
+        app:srcCompat="@drawable/logout" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="100dp"
+        android:layout_height="31dp"
+        android:layout_marginEnd="40dp"
+        android:background="#00FFFBFB"
+        android:gravity="center"
+        android:text="Log out"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logout_image" />
+
+    <ImageView
+        android:id="@+id/leaderboard_icon"
+        android:layout_width="49dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="56dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hard"
+        app:srcCompat="@drawable/leaderboard" />
+
+    <Button
+        android:id="@+id/leaderboard"
+        android:layout_width="100dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="40dp"
+        android:background="#00FFFBFB"
+        android:text="leaderboard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/leaderboard_icon"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
