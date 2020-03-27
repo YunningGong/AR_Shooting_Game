@@ -7,3 +7,9 @@ If run this app in the phone, please install
 "Google_Play_Services_for_AR_1.12.1.apk"
 
 Link: https://github.com/google-ar/arcore-android-sdk/releases
+
+
+
+# AR_Shooting_Game Demo
+Youtube Link:
+https://youtu.be/dkOADBYYbYA
