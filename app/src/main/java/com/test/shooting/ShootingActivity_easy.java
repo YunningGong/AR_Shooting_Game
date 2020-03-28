@@ -45,7 +45,7 @@ public class ShootingActivity_easy extends AppCompatActivity {
     private int i=0;
     private ImageView gunImage;
     private String Mode;
-    private Button giveUpe;
+    private Button giveUpe, shoot;
     private Boolean stopThread = true;
 
     @Override
@@ -54,14 +54,13 @@ public class ShootingActivity_easy extends AppCompatActivity {
         setContentView(R.layout.activity_shooting_easy);
 
         gunImage=(ImageView)findViewById(R.id.gun);
-        //gunImage.setImageResource(R.drawable.gun);
-        //gunImage.setImageBitmap(BitmapFactory.decodeFile("drawable/gun.jpg"));
+        balloonleftTxt=findViewById(R.id.balloonsCntTxt);
+        shoot=findViewById(R.id.shootButton);
+        giveUpe=findViewById(R.id.giveUp);
+
         Display display=getWindowManager().getDefaultDisplay();
         point=new Point();
         display.getRealSize(point);
-
-        loadSoundPool();
-        balloonleftTxt=findViewById(R.id.balloonsCntTxt);
 
         CustomArFragment arFragment=
                 (CustomArFragment) getSupportFragmentManager().findFragmentById(R.id.arFragment);
@@ -69,13 +68,10 @@ public class ShootingActivity_easy extends AppCompatActivity {
         scene=arFragment.getArSceneView().getScene();
         camera=scene.getCamera();
 
+        loadSoundPool();
         addBalloonsToScene();
-        //addMoveToScene();
         buildBulletModel();
 
-        Button shoot=findViewById(R.id.shootButton);
-
-        giveUpe=findViewById(R.id.giveUp);
         giveUpe.setOnClickListener(view -> {
             Intent backToMain=new Intent(ShootingActivity_easy.this,StartGameActivity.class);
             stopThread = false;
@@ -83,27 +79,16 @@ public class ShootingActivity_easy extends AppCompatActivity {
             finish();
         });
 
-
-
-
-
         shoot.setOnClickListener(v-> {
-
             if(shouldStartTimer){
                 startTimer();
                 shouldStartTimer=false;
             }
-
             shoot();
-
         });
-
-
-
     }
 
     private void loadSoundPool() {
-
         AudioAttributes audioAttributes=new AudioAttributes.Builder()
                 .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
                 .setUsage(AudioAttributes.USAGE_GAME)
@@ -117,13 +102,9 @@ public class ShootingActivity_easy extends AppCompatActivity {
         sound=soundPool.load(this,R.raw.blop_sound,1);
         airGun=soundPool.load(this,R.raw.air_gun_shot,1);
         birdSound=soundPool.load(this,R.raw.plane,1);
-
-
-
     }
 
     private void shoot(){
-
         Ray ray=camera.screenPointToRay(point.x/2f,point.y/2f);
         Node node=new Node();
         node.setRenderable(bulletRenderable);
@@ -131,29 +112,20 @@ public class ShootingActivity_easy extends AppCompatActivity {
         soundPool.play(airGun,1f,1f,1,0,1f);
 
         new Thread(()->{
-
             for (int i=0; i<200; i++){
-
                 int finalI1 = i;
                 runOnUiThread(()->{
-
                     Vector3 vector3=ray.getPoint(finalI1 *0.1f);
                     node.setWorldPosition(vector3);
-
                     Node nodeInContact=scene.overlapTest(node);
 
                     if (nodeInContact!=null){
-
                         balloonsLeft--;
                         balloonleftTxt.setText("Monsters Left:"+balloonsLeft);
                         scene.removeChild(nodeInContact);
 
                         soundPool.play(sound,1f,1f,1,0,1f);
-
-
                     }
-
-
                 });
                 try {
                     Thread.sleep(10);
@@ -161,10 +133,7 @@ public class ShootingActivity_easy extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-
             runOnUiThread(()->scene.removeChild(node));
-
-
         }).start();
 
     }
@@ -205,7 +174,6 @@ public class ShootingActivity_easy extends AppCompatActivity {
     }
 
     private void buildBulletModel() {
-
         Texture
                 .builder()
                 .setSource(this, R.drawable.texture)
@@ -232,10 +200,8 @@ public class ShootingActivity_easy extends AppCompatActivity {
                     for (int i=0; i<20; i++){
                         nodes.add(i,new Node());
 
-
                         nodes.get(i).setRenderable(renderable);
                         scene.addChild(nodes.get(i));
-
 
                         Random random=new Random();
                         int x=random.nextInt(10);
@@ -250,9 +216,6 @@ public class ShootingActivity_easy extends AppCompatActivity {
                                 (float)z
                         ));
                         nodes.get(i).setWorldRotation(Quaternion.axisAngle(new Vector3(0, 1, 0), 180));
-
-
-
                     }
                     new Thread(()->{
                         while(stopThread){
@@ -264,14 +227,8 @@ public class ShootingActivity_easy extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                             soundPool.play(birdSound,1f,1f,2,0,1f);
-
-
                         }
-
-
                     }).start();
-
-
                 });
     }
 
