@@ -14,30 +14,15 @@ Link: https://github.com/google-ar/arcore-android-sdk/releases
 Youtube Link:
 https://youtu.be/dkOADBYYbYA
 
-
-<div  align="center">
 <img src="./demo_images/main.png" width = 30% height = 30% alt="main" align=center  />
-</div>
 
-
-<div  align="center">
 <img src="./demo_images/login.png" width = 30% height = 30% alt="main" align=center />
-</div>
 
-
-<div  align="center">
 <img src="./demo_images/signup.png" width = 30% height = 30% alt="main" align=center />
-</div>
 
-
-<div  align="center">
 <img src="./demo_images/StartGame.png" width = 30% height = 30% alt="main" align=center  />
-</div>
 
-
-<div  align="center">
 <img src="./demo_images/Leaderboard.png" width = 30% height = 30% alt="main" align=center />
-</div>
 
 <img src="./demo_images/easy.png" width = 100% height = 100% alt="main" align=center />
 <img src="./demo_images/easyresult.png" width = 100% height = 100% alt="main" align=center />
